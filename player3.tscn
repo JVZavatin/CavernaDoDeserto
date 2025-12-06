@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://ch5ioqr6qlydp"]
+
+[ext_resource type="Script" uid="uid://7pnmtchm6naw" path="res://player.gd" id="1_0ptoo"]
+[ext_resource type="Resource" uid="uid://b7y0nfv5i1d2b" path="res://Resources/DefaultMovementData.tres" id="2_j3q2b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gw8r3"]
+size = Vector2(8, 15)
+
+[node name="Player3" type="CharacterBody2D"]
+floor_constant_speed = true
+floor_snap_length = 3.0
+script = ExtResource("1_0ptoo")
+movement_data = ExtResource("2_j3q2b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -7.5)
+shape = SubResource("RectangleShape2D_gw8r3")
+
+[node name="CoyoteJumpTimer" type="Timer" parent="."]
+wait_time = 0.05
+one_shot = true

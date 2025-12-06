@@ -1,0 +1,102 @@
+[gd_scene load_steps=12 format=3 uid="uid://7r4rcd0ue0re"]
+
+[ext_resource type="Texture2D" uid="uid://5nfioaapekyl" path="res://Sprites/Char1-Solo.png" id="1_tcqku"]
+[ext_resource type="Script" path="res://PlayerLobby.gd" id="1_wyspv"]
+[ext_resource type="Texture2D" uid="uid://cfksj38rnxlar" path="res://Sprites/numero_de_jogadores_title.png" id="2_fgvl0"]
+[ext_resource type="Texture2D" uid="uid://b1hoe1vahhuri" path="res://Sprites/Char2-Solo.png" id="2_rnyia"]
+[ext_resource type="Texture2D" uid="uid://bj7e3hg8simee" path="res://Sprites/Char3-Solo.png" id="3_ahkkm"]
+[ext_resource type="Texture2D" uid="uid://bgpg30bulg22a" path="res://Sprites/Char4-Solo.png" id="4_qxf8y"]
+[ext_resource type="PackedScene" uid="uid://bq67rcicmc43d" path="res://TileMapCavernaDoDeserto.tscn" id="6_iil2g"]
+[ext_resource type="Texture2D" uid="uid://dmjktm2blt3mu" path="res://Sprites/button_1.png" id="6_l7fmn"]
+[ext_resource type="Texture2D" uid="uid://bu0yvost6m3o2" path="res://Sprites/button_2.png" id="7_vsjhi"]
+[ext_resource type="Texture2D" uid="uid://dpwnycoe0rq8j" path="res://Sprites/button_3.png" id="8_7awyv"]
+[ext_resource type="Texture2D" uid="uid://cm4j47ommmrq0" path="res://Sprites/button_4.png" id="9_dg6lp"]
+
+[node name="PlayerLobby" type="CanvasLayer"]
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+z_index = 6
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 23.0
+offset_top = 21.0
+offset_right = 47.0
+offset_bottom = 21.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.8, 0.8)
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="PlayerLobby" type="CenterContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+script = ExtResource("1_wyspv")
+
+[node name="Sprite2D" type="Sprite2D" parent="MarginContainer/PlayerLobby"]
+z_index = 5
+position = Vector2(172, -115.75)
+texture = ExtResource("2_fgvl0")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PlayerLobby"]
+layout_mode = 2
+theme_override_constants/separation = 100
+alignment = 1
+
+[node name="SpriteJogador1" type="Sprite2D" parent="MarginContainer/PlayerLobby/VBoxContainer"]
+position = Vector2(38.75, -23.25)
+scale = Vector2(4, 4)
+texture = ExtResource("1_tcqku")
+
+[node name="SpriteJogador2" type="Sprite2D" parent="MarginContainer/PlayerLobby/VBoxContainer"]
+position = Vector2(201.25, -23.25)
+scale = Vector2(4, 4)
+texture = ExtResource("2_rnyia")
+
+[node name="SpriteJogador3" type="Sprite2D" parent="MarginContainer/PlayerLobby/VBoxContainer"]
+position = Vector2(118.75, -23.25)
+scale = Vector2(4, 4)
+texture = ExtResource("3_ahkkm")
+
+[node name="SpriteJogador4" type="Sprite2D" parent="MarginContainer/PlayerLobby/VBoxContainer"]
+position = Vector2(283.75, -23.25)
+scale = Vector2(4, 4)
+texture = ExtResource("4_qxf8y")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PlayerLobby/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+alignment = 1
+
+[node name="Player1Button" type="Button" parent="MarginContainer/PlayerLobby/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+icon = ExtResource("6_l7fmn")
+flat = true
+
+[node name="Player2Button" type="Button" parent="MarginContainer/PlayerLobby/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+icon = ExtResource("7_vsjhi")
+flat = true
+
+[node name="Player3Button" type="Button" parent="MarginContainer/PlayerLobby/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+icon = ExtResource("8_7awyv")
+flat = true
+
+[node name="Player4Button" type="Button" parent="MarginContainer/PlayerLobby/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+icon = ExtResource("9_dg6lp")
+flat = true
+
+[node name="Background" type="Node2D" parent="."]
+
+[node name="TileMapCavernaDoDeserto" parent="Background" instance=ExtResource("6_iil2g")]
+position = Vector2(-88, -114)
+
+[connection signal="pressed" from="MarginContainer/PlayerLobby/VBoxContainer/HBoxContainer/Player1Button" to="MarginContainer/PlayerLobby" method="_on_player_1_button_pressed"]
+[connection signal="pressed" from="MarginContainer/PlayerLobby/VBoxContainer/HBoxContainer/Player2Button" to="MarginContainer/PlayerLobby" method="_on_player_2_button_pressed"]
+[connection signal="pressed" from="MarginContainer/PlayerLobby/VBoxContainer/HBoxContainer/Player3Button" to="MarginContainer/PlayerLobby" method="_on_player_3_button_pressed"]
+[connection signal="pressed" from="MarginContainer/PlayerLobby/VBoxContainer/HBoxContainer/Player4Button" to="MarginContainer/PlayerLobby" method="_on_player_4_button_pressed"]

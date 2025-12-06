@@ -1,0 +1,63 @@
+[gd_scene load_steps=9 format=3 uid="uid://ds551lh1w8rv1"]
+
+[ext_resource type="Texture2D" uid="uid://bjoqsb2mt48co" path="res://Sprites/Objects/JungleGrass-1.png" id="1_1fi45"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fsa47"]
+atlas = ExtResource("1_1fi45")
+region = Rect2(8, 16, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x5a88"]
+atlas = ExtResource("1_1fi45")
+region = Rect2(16, 16, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4hckw"]
+atlas = ExtResource("1_1fi45")
+region = Rect2(24, 16, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7im8d"]
+atlas = ExtResource("1_1fi45")
+region = Rect2(32, 16, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6iq8y"]
+atlas = ExtResource("1_1fi45")
+region = Rect2(56, 16, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xve3i"]
+atlas = ExtResource("1_1fi45")
+region = Rect2(0, 16, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_83yb0"]
+resource_name = "vine-red"
+animations = [{
+"frames": [{
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_fsa47")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_x5a88")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_4hckw")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_7im8d")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_6iq8y")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_xve3i")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[node name="TallgrassRed" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 1
+sprite_frames = SubResource("SpriteFrames_83yb0")
+autoplay = "default"
+frame_progress = 0.119327
+centered = false

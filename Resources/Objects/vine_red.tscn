@@ -1,0 +1,63 @@
+[gd_scene load_steps=9 format=3 uid="uid://c75c8utakajot"]
+
+[ext_resource type="Texture2D" uid="uid://bm0yjumwhh22k" path="res://Sprites/Objects/Vines-Red.png" id="1_s7wbl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uo0v6"]
+atlas = ExtResource("1_s7wbl")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ljidt"]
+atlas = ExtResource("1_s7wbl")
+region = Rect2(8, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6mq80"]
+atlas = ExtResource("1_s7wbl")
+region = Rect2(16, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_01asq"]
+atlas = ExtResource("1_s7wbl")
+region = Rect2(24, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wixl2"]
+atlas = ExtResource("1_s7wbl")
+region = Rect2(32, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7rm5l"]
+atlas = ExtResource("1_s7wbl")
+region = Rect2(40, 0, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nxadk"]
+resource_name = "vine-red"
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uo0v6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ljidt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6mq80")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_01asq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wixl2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7rm5l")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[node name="vine_red" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 1
+sprite_frames = SubResource("SpriteFrames_nxadk")
+autoplay = "default"
+frame_progress = 0.419835
+centered = false

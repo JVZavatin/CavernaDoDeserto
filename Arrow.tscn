@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://cg2wdypxqbips"]
+
+[ext_resource type="Script" uid="uid://c4npohyfaor75" path="res://Resources/Arrow.gd" id="1_dc33i"]
+[ext_resource type="Texture2D" uid="uid://c4uays7eml7ck" path="res://Sprites/Powers/Projectile.png" id="2_mcme8"]
+[ext_resource type="AudioStream" uid="uid://dsoykeygrn11l" path="res://Sounds/tap.wav" id="3_08ca5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t3606"]
+size = Vector2(16, 2)
+
+[node name="Arrow" type="Area2D"]
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("1_dc33i")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 5
+texture_filter = 1
+position = Vector2(0, -7)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_mcme8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -7)
+shape = SubResource("RectangleShape2D_t3606")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[node name="sfx_shoot" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_08ca5")
+volume_db = -16.0
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

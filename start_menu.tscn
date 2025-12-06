@@ -1,0 +1,294 @@
+[gd_scene load_steps=18 format=3 uid="uid://dotdtuvxwaqrv"]
+
+[ext_resource type="Texture2D" uid="uid://clfaqbjtm71l8" path="res://Sprites/Titles/caverna_do_deserto_title.png" id="1_areja"]
+[ext_resource type="Script" uid="uid://bj4jln6fxbwl7" path="res://start_menu.gd" id="1_re0aw"]
+[ext_resource type="Texture2D" uid="uid://dfveopumd41st" path="res://Sprites/Ui/iniciar.png" id="3_6p4e4"]
+[ext_resource type="Theme" uid="uid://dk51ejjgwhnmb" path="res://YellowText.tres" id="3_acoh7"]
+[ext_resource type="PackedScene" uid="uid://bq67rcicmc43d" path="res://TileMapCavernaDoDeserto.tscn" id="5_p00sy"]
+[ext_resource type="Texture2D" uid="uid://bgmvdfvluj3e6" path="res://Sprites/Ui/unmute.png" id="6_6p4e4"]
+[ext_resource type="PackedScene" uid="uid://rykenyic7if5" path="res://background_music.tscn" id="7_7boi2"]
+[ext_resource type="Texture2D" uid="uid://dhoiaem5dcku" path="res://Sprites/Titles/configuracoes_title.png" id="7_xsckg"]
+[ext_resource type="Texture2D" uid="uid://fminae6lybs7" path="res://Sprites/Titles/numero_de_voltas_title_transparent.png" id="8_gfl6h"]
+[ext_resource type="Texture2D" uid="uid://bdubiky2jx7ng" path="res://Sprites/Ui/small-3-pressed.png" id="9_acoh7"]
+[ext_resource type="Texture2D" uid="uid://cgcnj5jmpqq7w" path="res://Sprites/Ui/small-5.png" id="10_6p4e4"]
+[ext_resource type="LabelSettings" uid="uid://cw8jv4rysepmk" path="res://LabelPadrão.tres" id="10_ld0yp"]
+[ext_resource type="Script" uid="uid://bbwi8ldjxefov" path="res://scroll_container.gd" id="11_8y6t8"]
+[ext_resource type="Texture2D" uid="uid://b5gol6o4itvuy" path="res://Sprites/Ui/small-10.png" id="11_jxkec"]
+[ext_resource type="Texture2D" uid="uid://cg3rbh8ycwlsl" path="res://Sprites/Chars/Char1-1-Icon.png" id="11_w8jvl"]
+[ext_resource type="Texture2D" uid="uid://b8e5jnfqq7hjw" path="res://Sprites/Objects/Apple.png" id="12_8y6t8"]
+[ext_resource type="Texture2D" uid="uid://bvmm7kef1wd4a" path="res://Sprites/Titles/UTFPR_logo.svg" id="13_jxkec"]
+
+[node name="StartMenu" type="CanvasLayer"]
+script = ExtResource("1_re0aw")
+
+[node name="MainMenu" type="MarginContainer" parent="."]
+visible = false
+z_index = 6
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 0
+
+[node name="Title" type="Sprite2D" parent="MainMenu"]
+position = Vector2(172, 26)
+texture = ExtResource("1_areja")
+
+[node name="Center" type="CenterContainer" parent="MainMenu"]
+layout_mode = 2
+
+[node name="Options" type="VBoxContainer" parent="MainMenu/Center"]
+layout_mode = 2
+
+[node name="StartGameButton" type="Button" parent="MainMenu/Center/Options"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("3_acoh7")
+text = "Iniciar"
+
+[node name="LeaderboardButton" type="Button" parent="MainMenu/Center/Options"]
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("3_acoh7")
+text = "Líderes"
+
+[node name="ConfigButton" type="Button" parent="MainMenu/Center/Options"]
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("3_acoh7")
+text = "Configurações"
+
+[node name="QuitButton" type="Button" parent="MainMenu/Center/Options"]
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("3_acoh7")
+text = "Sair"
+
+[node name="Music" type="Node2D" parent="MainMenu"]
+position = Vector2(10, 150)
+
+[node name="ButtonMute" type="Button" parent="MainMenu/Music"]
+offset_right = 24.0
+offset_bottom = 24.0
+icon = ExtResource("6_6p4e4")
+flat = true
+
+[node name="Configs" type="CenterContainer" parent="."]
+z_index = 6
+offset_right = 320.0
+offset_bottom = 180.0
+
+[node name="Options" type="VBoxContainer" parent="Configs"]
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="Configs/Options"]
+layout_mode = 2
+
+[node name="Container" type="AspectRatioContainer" parent="Configs/Options/CenterContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="ConfigsTitle" type="Sprite2D" parent="Configs/Options/CenterContainer/Container"]
+texture = ExtResource("7_xsckg")
+
+[node name="CenterContainer2" type="CenterContainer" parent="Configs/Options"]
+layout_mode = 2
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="Configs/Options/CenterContainer2"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Configs/Options/CenterContainer2/AspectRatioContainer"]
+layout_mode = 2
+
+[node name="AspectRatioContainer" type="CenterContainer" parent="Configs/Options/CenterContainer2/AspectRatioContainer/HBoxContainer"]
+custom_minimum_size = Vector2(95, 0)
+layout_mode = 2
+
+[node name="VoltasTitle" type="Sprite2D" parent="Configs/Options/CenterContainer2/AspectRatioContainer/HBoxContainer/AspectRatioContainer"]
+texture = ExtResource("8_gfl6h")
+centered = false
+
+[node name="Btn3Container" type="CenterContainer" parent="Configs/Options/CenterContainer2/AspectRatioContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Button3" type="Button" parent="Configs/Options/CenterContainer2/AspectRatioContainer/HBoxContainer/Btn3Container"]
+layout_mode = 2
+icon = ExtResource("9_acoh7")
+flat = true
+
+[node name="Btn5Container" type="CenterContainer" parent="Configs/Options/CenterContainer2/AspectRatioContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Button5" type="Button" parent="Configs/Options/CenterContainer2/AspectRatioContainer/HBoxContainer/Btn5Container"]
+layout_mode = 2
+icon = ExtResource("10_6p4e4")
+flat = true
+
+[node name="Btn10Container" type="CenterContainer" parent="Configs/Options/CenterContainer2/AspectRatioContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Button10" type="Button" parent="Configs/Options/CenterContainer2/AspectRatioContainer/HBoxContainer/Btn10Container"]
+layout_mode = 2
+icon = ExtResource("11_jxkec")
+flat = true
+
+[node name="Leaderboard" type="CenterContainer" parent="."]
+visible = false
+z_index = 6
+offset_right = 320.0
+offset_bottom = 180.0
+
+[node name="Layout" type="VBoxContainer" parent="Leaderboard"]
+layout_mode = 2
+
+[node name="TitleContainer" type="CenterContainer" parent="Leaderboard/Layout"]
+layout_mode = 2
+
+[node name="Container" type="AspectRatioContainer" parent="Leaderboard/Layout/TitleContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Leaderboard/Layout/TitleContainer/Container"]
+layout_mode = 2
+text = "Líderes"
+label_settings = ExtResource("10_ld0yp")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Leaderboard/Layout"]
+custom_minimum_size = Vector2(300, 130)
+layout_mode = 2
+focus_mode = 2
+theme = ExtResource("3_acoh7")
+horizontal_scroll_mode = 0
+script = ExtResource("11_8y6t8")
+
+[node name="List" type="VBoxContainer" parent="Leaderboard/Layout/ScrollContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+
+[node name="Entry1" type="CenterContainer" parent="Leaderboard/Layout/ScrollContainer/List"]
+visible = false
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Leaderboard/Layout/ScrollContainer/List/Entry1"]
+layout_mode = 2
+
+[node name="PositionContainer" type="CenterContainer" parent="Leaderboard/Layout/ScrollContainer/List/Entry1/HBoxContainer"]
+layout_mode = 2
+
+[node name="Position" type="Label" parent="Leaderboard/Layout/ScrollContainer/List/Entry1/HBoxContainer/PositionContainer"]
+layout_mode = 2
+text = "1"
+label_settings = ExtResource("10_ld0yp")
+
+[node name="IconContainer" type="CenterContainer" parent="Leaderboard/Layout/ScrollContainer/List/Entry1/HBoxContainer"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="PlayerIcon" type="Sprite2D" parent="Leaderboard/Layout/ScrollContainer/List/Entry1/HBoxContainer/IconContainer"]
+texture = ExtResource("11_w8jvl")
+offset = Vector2(10, 0)
+
+[node name="NameContainer" type="CenterContainer" parent="Leaderboard/Layout/ScrollContainer/List/Entry1/HBoxContainer"]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="Leaderboard/Layout/ScrollContainer/List/Entry1/HBoxContainer/NameContainer"]
+layout_mode = 2
+text = "João Doe"
+label_settings = ExtResource("10_ld0yp")
+
+[node name="AppleIcon" type="CenterContainer" parent="Leaderboard/Layout/ScrollContainer/List/Entry1/HBoxContainer"]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="AppleIcon" type="Sprite2D" parent="Leaderboard/Layout/ScrollContainer/List/Entry1/HBoxContainer/AppleIcon"]
+texture = ExtResource("12_8y6t8")
+offset = Vector2(10, 0)
+region_enabled = true
+region_rect = Rect2(3, 3, 10, 11)
+
+[node name="PointsContainer" type="CenterContainer" parent="Leaderboard/Layout/ScrollContainer/List/Entry1/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Points" type="Label" parent="Leaderboard/Layout/ScrollContainer/List/Entry1/HBoxContainer/PointsContainer"]
+layout_mode = 2
+text = "120"
+label_settings = ExtResource("10_ld0yp")
+
+[node name="SplashScreen" type="CenterContainer" parent="."]
+visible = false
+z_index = 6
+custom_minimum_size = Vector2(320, 180)
+offset_right = 320.0
+offset_bottom = 180.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SplashScreen"]
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="SplashScreen/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Title" type="Sprite2D" parent="SplashScreen/VBoxContainer/CenterContainer"]
+texture = ExtResource("1_areja")
+offset = Vector2(0, 10)
+
+[node name="CenterContainer2" type="CenterContainer" parent="SplashScreen/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="SplashScreen/VBoxContainer/CenterContainer2"]
+scale = Vector2(0.04, 0.04)
+texture = ExtResource("13_jxkec")
+offset = Vector2(0, 400)
+
+[node name="CenterContainer3" type="CenterContainer" parent="SplashScreen/VBoxContainer"]
+layout_mode = 2
+
+[node name="StartFromSplashButton" type="Button" parent="SplashScreen/VBoxContainer/CenterContainer3"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+icon = ExtResource("3_6p4e4")
+flat = true
+
+[node name="Background" type="Node2D" parent="."]
+
+[node name="TileMapCavernaDoDeserto" parent="Background" instance=ExtResource("5_p00sy")]
+position = Vector2(-62, -70)
+
+[node name="BackgroundMusic" parent="." instance=ExtResource("7_7boi2")]
+
+[connection signal="button_up" from="MainMenu/Center/Options/StartGameButton" to="." method="_on_start_game_button_button_up"]
+[connection signal="button_up" from="MainMenu/Center/Options/LeaderboardButton" to="." method="_on_leaderboard_button_button_up"]
+[connection signal="button_up" from="MainMenu/Center/Options/ConfigButton" to="." method="_on_config_button_button_up"]
+[connection signal="button_down" from="MainMenu/Center/Options/QuitButton" to="." method="_on_quit_button_button_down"]
+[connection signal="button_up" from="MainMenu/Center/Options/QuitButton" to="." method="_on_quit_button_button_up"]
+[connection signal="pressed" from="MainMenu/Music/ButtonMute" to="." method="_on_button_mute_pressed"]
+[connection signal="pressed" from="Configs/Options/CenterContainer2/AspectRatioContainer/HBoxContainer/Btn3Container/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="Configs/Options/CenterContainer2/AspectRatioContainer/HBoxContainer/Btn5Container/Button5" to="." method="_on_button_5_pressed"]
+[connection signal="pressed" from="Configs/Options/CenterContainer2/AspectRatioContainer/HBoxContainer/Btn10Container/Button10" to="." method="_on_button_10_pressed"]
+[connection signal="button_down" from="SplashScreen/VBoxContainer/CenterContainer3/StartFromSplashButton" to="." method="_on_start_from_splash_button_button_down"]
+[connection signal="button_up" from="SplashScreen/VBoxContainer/CenterContainer3/StartFromSplashButton" to="." method="_on_start_from_splash_button_button_up"]

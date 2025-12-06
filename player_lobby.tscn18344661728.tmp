@@ -1,0 +1,820 @@
+[gd_scene load_steps=34 format=3 uid="uid://7r4rcd0ue0re"]
+
+[ext_resource type="Script" uid="uid://gcbx20ciuaw7" path="res://PlayerLobby.gd" id="1_wyspv"]
+[ext_resource type="Texture2D" uid="uid://cnso0r48x48gy" path="res://Sprites/Titles/jogadores_title.png" id="2_24u8t"]
+[ext_resource type="Theme" uid="uid://dk51ejjgwhnmb" path="res://YellowText.tres" id="3_3oodv"]
+[ext_resource type="Texture2D" uid="uid://tkad2gklmtyn" path="res://Sprites/Titles/pressione_para_criar_title.png" id="4_cjd3h"]
+[ext_resource type="Texture2D" uid="uid://656pda004232" path="res://Sprites/Ui/proximo.png" id="6_cjd3h"]
+[ext_resource type="PackedScene" uid="uid://bq67rcicmc43d" path="res://TileMapCavernaDoDeserto.tscn" id="6_iil2g"]
+[ext_resource type="Texture2D" uid="uid://fvp3ium8ogbq" path="res://Sprites/Titles/aparencia_do_jogador_title.png" id="8_elo0i"]
+[ext_resource type="Texture2D" uid="uid://cg3rbh8ycwlsl" path="res://Sprites/Chars/Char1-1-Icon.png" id="9_cjd3h"]
+[ext_resource type="Texture2D" uid="uid://dj1sx6tyd8k2d" path="res://Sprites/Chars/Char1-2-Icon.png" id="10_alwo2"]
+[ext_resource type="Texture2D" uid="uid://dtmswh2hg37a" path="res://Sprites/Chars/Char1-3-Icon.png" id="11_i5wfr"]
+[ext_resource type="Texture2D" uid="uid://mj61cnycmdm2" path="res://Sprites/Chars/Char1-4-Icon.png" id="12_cjd3h"]
+[ext_resource type="Texture2D" uid="uid://bthdgqsb61ugd" path="res://Sprites/Chars/Char2-1-Icon.png" id="13_jshfc"]
+[ext_resource type="Texture2D" uid="uid://iaeukscc0t8g" path="res://Sprites/Controls/WASDControls.png" id="13_oov4c"]
+[ext_resource type="Texture2D" uid="uid://d4i6aedldnus5" path="res://Sprites/Chars/Char2-2-Icon.png" id="14_3oodv"]
+[ext_resource type="Texture2D" uid="uid://c8we2o7vvasrm" path="res://Sprites/Controls/ArrowsControls.png" id="14_7bles"]
+[ext_resource type="Texture2D" uid="uid://by1xrfj1bstv5" path="res://Sprites/Chars/Char2-3-Icon.png" id="15_iwloy"]
+[ext_resource type="Texture2D" uid="uid://dodo3smeomc00" path="res://Sprites/Controls/JKLIControls.png" id="15_o6hyf"]
+[ext_resource type="Texture2D" uid="uid://pv472p3kii8g" path="res://Sprites/Controls/ControllerControls.png" id="16_4tdhh"]
+[ext_resource type="Texture2D" uid="uid://dgcp1si7pl5f4" path="res://Sprites/Chars/Char2-4-Icon.png" id="16_o4ehm"]
+[ext_resource type="Texture2D" uid="uid://bi3gt4v7fippr" path="res://Sprites/Chars/Char3-1-Icon.png" id="17_hqqhq"]
+[ext_resource type="Texture2D" uid="uid://6xufu3jcp8lt" path="res://Sprites/Chars/Char3-2-Icon.png" id="18_br5it"]
+[ext_resource type="Texture2D" uid="uid://bvhc4nq3lvl8j" path="res://Sprites/Chars/Char3-3-Icon.png" id="19_wjpsa"]
+[ext_resource type="Texture2D" uid="uid://u2tojj3t7bfp" path="res://Sprites/Chars/Char3-4-Icon.png" id="20_rwmmm"]
+[ext_resource type="Texture2D" uid="uid://dfvbr1vx3km2d" path="res://Sprites/Chars/Char4-1-Icon.png" id="21_t6h5q"]
+[ext_resource type="Texture2D" uid="uid://b6s3eqm523ygr" path="res://Sprites/Chars/Char4-2-Icon.png" id="22_wb7hi"]
+[ext_resource type="Texture2D" uid="uid://huoumjvlyy3i" path="res://Sprites/Chars/Char4-3-Icon.png" id="23_68su2"]
+[ext_resource type="Texture2D" uid="uid://c5fcy01f1qa2u" path="res://Sprites/Chars/Char4-4-Icon.png" id="24_2nbbg"]
+[ext_resource type="Texture2D" uid="uid://dl3sjoqors7ee" path="res://Sprites/Titles/controles_title.png" id="25_cjd3h"]
+[ext_resource type="Texture2D" uid="uid://do0ht17cm8amn" path="res://Sprites/Titles/nome_do_jogador_title.png" id="30_3oodv"]
+[ext_resource type="Texture2D" uid="uid://cuqxrhfo1a6hm" path="res://Sprites/Ui/voltar.png" id="30_jshfc"]
+[ext_resource type="Texture2D" uid="uid://cwvo3tfh8up2o" path="res://Sprites/Ui/name-selector.png" id="31_iwloy"]
+[ext_resource type="Texture2D" uid="uid://cthg6u233uipe" path="res://Sprites/Ui/confirmar.png" id="31_jshfc"]
+
+[sub_resource type="Texture2DRD" id="Texture2DRD_elo0i"]
+
+[node name="PlayerLobby" type="CanvasLayer"]
+script = ExtResource("1_wyspv")
+
+[node name="Background" type="Node2D" parent="."]
+visible = false
+position = Vector2(1.90735e-06, 1.90735e-06)
+
+[node name="TileMapCavernaDoDeserto" parent="Background" instance=ExtResource("6_iil2g")]
+position = Vector2(-88, -114)
+
+[node name="PlayersMarginContainer" type="MarginContainer" parent="."]
+visible = false
+z_index = 6
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 23.0
+offset_top = 21.0
+offset_right = 47.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.8, 0.8)
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="PlayerLobby" type="CenterContainer" parent="PlayersMarginContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="Sprite2D" type="Sprite2D" parent="PlayersMarginContainer/PlayerLobby"]
+z_index = 5
+position = Vector2(172, -108.25)
+texture = ExtResource("2_24u8t")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PlayersMarginContainer/PlayerLobby"]
+layout_mode = 2
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PlayersMarginContainer/PlayerLobby/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Player1Button" type="Button" parent="PlayersMarginContainer/PlayerLobby/VBoxContainer/HBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme = ExtResource("3_3oodv")
+theme_type_variation = &"FlatButton"
+text = "Player 1"
+
+[node name="SpriteJogador1" type="Sprite2D" parent="PlayersMarginContainer/PlayerLobby/VBoxContainer/HBoxContainer/Player1Button"]
+texture_filter = 1
+position = Vector2(38, -51)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("4_cjd3h")
+
+[node name="LastSpriteButtonP1" type="Button" parent="PlayersMarginContainer/PlayerLobby/VBoxContainer/HBoxContainer/Player1Button"]
+z_index = 5
+layout_mode = 0
+offset_left = 13.75
+offset_top = -21.25
+offset_right = 37.75
+offset_bottom = 2.75
+size_flags_horizontal = 0
+size_flags_vertical = 0
+icon = ExtResource("30_jshfc")
+flat = true
+
+[node name="NextSpriteButtonP1" type="Button" parent="PlayersMarginContainer/PlayerLobby/VBoxContainer/HBoxContainer/Player1Button"]
+z_index = 5
+layout_mode = 0
+offset_left = 40.0
+offset_top = -21.25
+offset_right = 64.0
+offset_bottom = 2.75
+size_flags_horizontal = 0
+size_flags_vertical = 0
+icon = ExtResource("6_cjd3h")
+flat = true
+
+[node name="Player2Button" type="Button" parent="PlayersMarginContainer/PlayerLobby/VBoxContainer/HBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme = ExtResource("3_3oodv")
+text = "Player 2"
+
+[node name="SpriteJogador2" type="Sprite2D" parent="PlayersMarginContainer/PlayerLobby/VBoxContainer/HBoxContainer/Player2Button"]
+texture_filter = 1
+position = Vector2(38, -51)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("4_cjd3h")
+
+[node name="LastSpriteButtonP2" type="Button" parent="PlayersMarginContainer/PlayerLobby/VBoxContainer/HBoxContainer/Player2Button"]
+z_index = 5
+layout_mode = 0
+offset_left = 13.75
+offset_top = -21.25
+offset_right = 37.75
+offset_bottom = 2.75
+size_flags_horizontal = 0
+size_flags_vertical = 0
+icon = ExtResource("30_jshfc")
+flat = true
+
+[node name="NextSpriteButtonP2" type="Button" parent="PlayersMarginContainer/PlayerLobby/VBoxContainer/HBoxContainer/Player2Button"]
+z_index = 5
+layout_mode = 0
+offset_left = 40.0
+offset_top = -21.25
+offset_right = 64.0
+offset_bottom = 2.75
+size_flags_horizontal = 0
+size_flags_vertical = 0
+icon = ExtResource("6_cjd3h")
+flat = true
+
+[node name="Player3Button" type="Button" parent="PlayersMarginContainer/PlayerLobby/VBoxContainer/HBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme = ExtResource("3_3oodv")
+text = "Player 3"
+
+[node name="SpriteJogador3" type="Sprite2D" parent="PlayersMarginContainer/PlayerLobby/VBoxContainer/HBoxContainer/Player3Button"]
+texture_filter = 1
+position = Vector2(38, -51)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("4_cjd3h")
+
+[node name="LastSpriteButtonP3" type="Button" parent="PlayersMarginContainer/PlayerLobby/VBoxContainer/HBoxContainer/Player3Button"]
+z_index = 5
+layout_mode = 0
+offset_left = 13.75
+offset_top = -21.25
+offset_right = 37.75
+offset_bottom = 2.75
+size_flags_horizontal = 0
+size_flags_vertical = 0
+icon = ExtResource("30_jshfc")
+flat = true
+
+[node name="NextSpriteButtonP3" type="Button" parent="PlayersMarginContainer/PlayerLobby/VBoxContainer/HBoxContainer/Player3Button"]
+z_index = 5
+layout_mode = 0
+offset_left = 40.0
+offset_top = -21.25
+offset_right = 64.0
+offset_bottom = 2.75
+size_flags_horizontal = 0
+size_flags_vertical = 0
+icon = ExtResource("6_cjd3h")
+flat = true
+
+[node name="Player4Button" type="Button" parent="PlayersMarginContainer/PlayerLobby/VBoxContainer/HBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme = ExtResource("3_3oodv")
+text = "Player 4"
+
+[node name="SpriteJogador4" type="Sprite2D" parent="PlayersMarginContainer/PlayerLobby/VBoxContainer/HBoxContainer/Player4Button"]
+texture_filter = 1
+position = Vector2(38, -51)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("4_cjd3h")
+
+[node name="LastSpriteButtonP4" type="Button" parent="PlayersMarginContainer/PlayerLobby/VBoxContainer/HBoxContainer/Player4Button"]
+z_index = 5
+layout_mode = 0
+offset_left = 13.75
+offset_top = -21.25
+offset_right = 37.75
+offset_bottom = 2.75
+size_flags_horizontal = 0
+size_flags_vertical = 0
+icon = ExtResource("30_jshfc")
+flat = true
+
+[node name="NextSpriteButtonP4" type="Button" parent="PlayersMarginContainer/PlayerLobby/VBoxContainer/HBoxContainer/Player4Button"]
+z_index = 5
+layout_mode = 0
+offset_left = 40.0
+offset_top = -21.25
+offset_right = 64.0
+offset_bottom = 2.75
+size_flags_horizontal = 0
+size_flags_vertical = 0
+icon = ExtResource("6_cjd3h")
+flat = true
+
+[node name="CenterContainer" type="CenterContainer" parent="PlayersMarginContainer/PlayerLobby/VBoxContainer"]
+layout_mode = 2
+
+[node name="StartButton" type="Button" parent="PlayersMarginContainer/PlayerLobby/VBoxContainer/CenterContainer"]
+z_index = 6
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("3_3oodv")
+disabled = true
+text = "Botão Menu Para Iniciar"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PlayersMarginContainer/PlayerLobby/VBoxContainer/CenterContainer"]
+visible = false
+layout_mode = 2
+theme = ExtResource("3_3oodv")
+
+[node name="SpritesMarginContainer" type="MarginContainer" parent="."]
+visible = false
+z_index = 6
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="SpritesContainer" type="CenterContainer" parent="SpritesMarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SpritesMarginContainer/SpritesContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="SpritesMarginContainer/SpritesContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="SpritesMarginContainer/SpritesContainer/VBoxContainer/AspectRatioContainer"]
+z_index = 5
+position = Vector2(0, 28)
+texture = ExtResource("8_elo0i")
+
+[node name="Char1" type="HBoxContainer" parent="SpritesMarginContainer/SpritesContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+alignment = 1
+
+[node name="Sprite1" type="Sprite2D" parent="SpritesMarginContainer/SpritesContainer/VBoxContainer/Char1"]
+show_behind_parent = true
+position = Vector2(-122, 0)
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("9_cjd3h")
+
+[node name="Char1Sprite1Button" type="Button" parent="SpritesMarginContainer/SpritesContainer/VBoxContainer/Char1/Sprite1"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.125
+offset_top = -8.125
+offset_right = -8.125
+offset_bottom = -8.125
+grow_horizontal = 2
+grow_vertical = 2
+icon = SubResource("Texture2DRD_elo0i")
+flat = true
+
+[node name="Sprite2" type="Sprite2D" parent="SpritesMarginContainer/SpritesContainer/VBoxContainer/Char1"]
+show_behind_parent = true
+position = Vector2(-39.5, 0)
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("10_alwo2")
+
+[node name="Char1Sprite2Button" type="Button" parent="SpritesMarginContainer/SpritesContainer/VBoxContainer/Char1/Sprite2"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.125
+offset_top = -8.125
+offset_right = -8.125
+offset_bottom = -8.125
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[node name="Sprite3" type="Sprite2D" parent="SpritesMarginContainer/SpritesContainer/VBoxContainer/Char1"]
+show_behind_parent = true
+position = Vector2(41.75, 0)
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("11_i5wfr")
+
+[node name="Char1Sprite3Button" type="Button" parent="SpritesMarginContainer/SpritesContainer/VBoxContainer/Char1/Sprite3"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.0
+offset_top = -8.0
+offset_right = -8.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[node name="Sprite4" type="Sprite2D" parent="SpritesMarginContainer/SpritesContainer/VBoxContainer/Char1"]
+show_behind_parent = true
+position = Vector2(124.25, 0)
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("12_cjd3h")
+
+[node name="Char1Sprite4Button" type="Button" parent="SpritesMarginContainer/SpritesContainer/VBoxContainer/Char1/Sprite4"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.125
+offset_top = -8.125
+offset_right = -8.125
+offset_bottom = -8.125
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[node name="Char2" type="HBoxContainer" parent="SpritesMarginContainer/SpritesContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+alignment = 1
+
+[node name="Sprite1" type="Sprite2D" parent="SpritesMarginContainer/SpritesContainer/VBoxContainer/Char2"]
+show_behind_parent = true
+position = Vector2(-122, 0)
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("13_jshfc")
+
+[node name="Char2Sprite1Button" type="Button" parent="SpritesMarginContainer/SpritesContainer/VBoxContainer/Char2/Sprite1"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.125
+offset_top = -8.125
+offset_right = -8.125
+offset_bottom = -8.125
+grow_horizontal = 2
+grow_vertical = 2
+icon = SubResource("Texture2DRD_elo0i")
+flat = true
+
+[node name="Sprite2" type="Sprite2D" parent="SpritesMarginContainer/SpritesContainer/VBoxContainer/Char2"]
+show_behind_parent = true
+position = Vector2(-39.5, 0)
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("14_3oodv")
+
+[node name="Char2Sprite2Button" type="Button" parent="SpritesMarginContainer/SpritesContainer/VBoxContainer/Char2/Sprite2"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.125
+offset_top = -8.125
+offset_right = -8.125
+offset_bottom = -8.125
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[node name="Sprite3" type="Sprite2D" parent="SpritesMarginContainer/SpritesContainer/VBoxContainer/Char2"]
+show_behind_parent = true
+position = Vector2(41.75, 0)
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("15_iwloy")
+
+[node name="Char2Sprite3Button" type="Button" parent="SpritesMarginContainer/SpritesContainer/VBoxContainer/Char2/Sprite3"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.0
+offset_top = -8.0
+offset_right = -8.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[node name="Sprite4" type="Sprite2D" parent="SpritesMarginContainer/SpritesContainer/VBoxContainer/Char2"]
+show_behind_parent = true
+position = Vector2(124.25, 0)
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("16_o4ehm")
+
+[node name="Char2Sprite4Button" type="Button" parent="SpritesMarginContainer/SpritesContainer/VBoxContainer/Char2/Sprite4"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.125
+offset_top = -8.125
+offset_right = -8.125
+offset_bottom = -8.125
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[node name="Char3" type="HBoxContainer" parent="SpritesMarginContainer/SpritesContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+alignment = 1
+
+[node name="Sprite1" type="Sprite2D" parent="SpritesMarginContainer/SpritesContainer/VBoxContainer/Char3"]
+show_behind_parent = true
+position = Vector2(-122, 0)
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("17_hqqhq")
+
+[node name="Char3Sprite1Button" type="Button" parent="SpritesMarginContainer/SpritesContainer/VBoxContainer/Char3/Sprite1"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.125
+offset_top = -8.125
+offset_right = -8.125
+offset_bottom = -8.125
+grow_horizontal = 2
+grow_vertical = 2
+icon = SubResource("Texture2DRD_elo0i")
+flat = true
+
+[node name="Sprite2" type="Sprite2D" parent="SpritesMarginContainer/SpritesContainer/VBoxContainer/Char3"]
+show_behind_parent = true
+position = Vector2(-39.5, 0)
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("18_br5it")
+
+[node name="Char3Sprite2Button" type="Button" parent="SpritesMarginContainer/SpritesContainer/VBoxContainer/Char3/Sprite2"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.125
+offset_top = -8.125
+offset_right = -8.125
+offset_bottom = -8.125
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[node name="Sprite3" type="Sprite2D" parent="SpritesMarginContainer/SpritesContainer/VBoxContainer/Char3"]
+show_behind_parent = true
+position = Vector2(41.75, 0)
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("19_wjpsa")
+
+[node name="Char3Sprite3Button" type="Button" parent="SpritesMarginContainer/SpritesContainer/VBoxContainer/Char3/Sprite3"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.0
+offset_top = -8.0
+offset_right = -8.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[node name="Sprite4" type="Sprite2D" parent="SpritesMarginContainer/SpritesContainer/VBoxContainer/Char3"]
+show_behind_parent = true
+position = Vector2(124.25, 0)
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("20_rwmmm")
+
+[node name="Char3Sprite4Button" type="Button" parent="SpritesMarginContainer/SpritesContainer/VBoxContainer/Char3/Sprite4"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.125
+offset_top = -8.125
+offset_right = -8.125
+offset_bottom = -8.125
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[node name="Char4" type="HBoxContainer" parent="SpritesMarginContainer/SpritesContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+alignment = 1
+
+[node name="Sprite1" type="Sprite2D" parent="SpritesMarginContainer/SpritesContainer/VBoxContainer/Char4"]
+show_behind_parent = true
+position = Vector2(-122, 0)
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("21_t6h5q")
+
+[node name="Char4Sprite1Button" type="Button" parent="SpritesMarginContainer/SpritesContainer/VBoxContainer/Char4/Sprite1"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.125
+offset_top = -8.125
+offset_right = -8.125
+offset_bottom = -8.125
+grow_horizontal = 2
+grow_vertical = 2
+icon = SubResource("Texture2DRD_elo0i")
+flat = true
+
+[node name="Sprite2" type="Sprite2D" parent="SpritesMarginContainer/SpritesContainer/VBoxContainer/Char4"]
+show_behind_parent = true
+position = Vector2(-39.5, 0)
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("22_wb7hi")
+
+[node name="Char4Sprite2Button" type="Button" parent="SpritesMarginContainer/SpritesContainer/VBoxContainer/Char4/Sprite2"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.125
+offset_top = -8.125
+offset_right = -8.125
+offset_bottom = -8.125
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[node name="Sprite3" type="Sprite2D" parent="SpritesMarginContainer/SpritesContainer/VBoxContainer/Char4"]
+show_behind_parent = true
+position = Vector2(41.75, 0)
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("23_68su2")
+
+[node name="Char4Sprite3Button" type="Button" parent="SpritesMarginContainer/SpritesContainer/VBoxContainer/Char4/Sprite3"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.0
+offset_top = -8.0
+offset_right = -8.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[node name="Sprite4" type="Sprite2D" parent="SpritesMarginContainer/SpritesContainer/VBoxContainer/Char4"]
+show_behind_parent = true
+position = Vector2(124.25, 0)
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("24_2nbbg")
+
+[node name="Char4Sprite4Button" type="Button" parent="SpritesMarginContainer/SpritesContainer/VBoxContainer/Char4/Sprite4"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.125
+offset_top = -8.125
+offset_right = -8.125
+offset_bottom = -8.125
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[node name="ControlsMarginContainer" type="MarginContainer" parent="."]
+visible = false
+z_index = 6
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 23.0
+offset_top = 21.0
+offset_right = 47.0
+offset_bottom = 21.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.8, 0.8)
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Sprite2D" type="Sprite2D" parent="ControlsMarginContainer"]
+position = Vector2(173.75, 16.25)
+texture = ExtResource("25_cjd3h")
+
+[node name="ControlsContainer" type="CenterContainer" parent="ControlsMarginContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ControlsMarginContainer/ControlsContainer"]
+layout_mode = 2
+theme_override_constants/separation = 100
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ControlsMarginContainer/ControlsContainer/VBoxContainer"]
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 4
+alignment = 1
+
+[node name="WASD" type="Sprite2D" parent="ControlsMarginContainer/ControlsContainer/VBoxContainer/HBoxContainer"]
+show_behind_parent = true
+position = Vector2(-122, -37.5)
+texture = ExtResource("13_oov4c")
+
+[node name="WASDButton" type="Button" parent="ControlsMarginContainer/ControlsContainer/VBoxContainer/HBoxContainer/WASD"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -32.5
+offset_top = -31.25
+offset_right = -32.5
+offset_bottom = -31.25
+grow_horizontal = 2
+grow_vertical = 2
+icon = SubResource("Texture2DRD_elo0i")
+flat = true
+
+[node name="Arrows" type="Sprite2D" parent="ControlsMarginContainer/ControlsContainer/VBoxContainer/HBoxContainer"]
+show_behind_parent = true
+position = Vector2(-39.5, -37.5)
+texture = ExtResource("14_7bles")
+
+[node name="ArrowsButton" type="Button" parent="ControlsMarginContainer/ControlsContainer/VBoxContainer/HBoxContainer/Arrows"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -32.5
+offset_top = -31.25
+offset_right = -32.5
+offset_bottom = -31.25
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[node name="JKLI" type="Sprite2D" parent="ControlsMarginContainer/ControlsContainer/VBoxContainer/HBoxContainer"]
+show_behind_parent = true
+position = Vector2(41.75, -37.5)
+texture = ExtResource("15_o6hyf")
+
+[node name="JKLIButton" type="Button" parent="ControlsMarginContainer/ControlsContainer/VBoxContainer/HBoxContainer/JKLI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -31.25
+offset_top = -31.25
+offset_right = -31.25
+offset_bottom = -31.25
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[node name="Controller" type="Sprite2D" parent="ControlsMarginContainer/ControlsContainer/VBoxContainer/HBoxContainer"]
+show_behind_parent = true
+position = Vector2(124.25, -37.5)
+texture = ExtResource("16_4tdhh")
+
+[node name="ControllerButton" type="Button" parent="ControlsMarginContainer/ControlsContainer/VBoxContainer/HBoxContainer/Controller"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -32.5
+offset_top = -32.5
+offset_right = -32.5
+offset_bottom = -32.5
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[node name="NameCenterContainer" type="CenterContainer" parent="."]
+z_index = 7
+custom_minimum_size = Vector2(320, 180)
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="WindowFrame" type="Sprite2D" parent="NameCenterContainer"]
+z_index = 6
+position = Vector2(159, 84)
+texture = ExtResource("31_iwloy")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NameCenterContainer"]
+z_index = 7
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="NameCenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="NomeTitle" type="Sprite2D" parent="NameCenterContainer/VBoxContainer/CenterContainer"]
+texture = ExtResource("30_3oodv")
+
+[node name="CenterContainer2" type="CenterContainer" parent="NameCenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="NameLineEdit" type="LineEdit" parent="NameCenterContainer/VBoxContainer/CenterContainer2"]
+custom_minimum_size = Vector2(150, 20)
+layout_mode = 2
+theme = ExtResource("3_3oodv")
+placeholder_text = "Nome"
+alignment = 1
+max_length = 20
+
+[node name="CenterContainer3" type="CenterContainer" parent="NameCenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="OkButton" type="Button" parent="NameCenterContainer/VBoxContainer/CenterContainer3"]
+z_index = 5
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+icon = ExtResource("31_jshfc")
+flat = true
+
+[node name="OffsetKeyboard" type="CenterContainer" parent="NameCenterContainer/VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(0, 45)
+layout_mode = 2
+
+[node name="BlackBackground" type="ColorRect" parent="."]
+visible = false
+z_index = 5
+custom_minimum_size = Vector2(400, 250)
+offset_left = -35.0
+offset_top = -29.0
+offset_right = 365.0
+offset_bottom = 221.0
+color = Color(0, 0, 0, 0.313726)
+
+[node name="BackButton" type="Button" parent="."]
+visible = false
+z_index = 5
+offset_right = 20.0
+offset_bottom = 20.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+icon = ExtResource("30_jshfc")
+flat = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[connection signal="button_down" from="PlayersMarginContainer/PlayerLobby/VBoxContainer/HBoxContainer/Player1Button" to="." method="_on_player_1_button_button_down"]
+[connection signal="button_up" from="PlayersMarginContainer/PlayerLobby/VBoxContainer/HBoxContainer/Player1Button" to="." method="_on_player_1_button_button_up"]
+[connection signal="button_down" from="PlayersMarginContainer/PlayerLobby/VBoxContainer/HBoxContainer/Player1Button/LastSpriteButtonP1" to="." method="_on_back_button_button_down"]
+[connection signal="button_up" from="PlayersMarginContainer/PlayerLobby/VBoxContainer/HBoxContainer/Player1Button/LastSpriteButtonP1" to="." method="_on_back_button_button_up"]
+[connection signal="button_down" from="PlayersMarginContainer/PlayerLobby/VBoxContainer/HBoxContainer/Player1Button/NextSpriteButtonP1" to="." method="_on_back_button_button_down"]
+[connection signal="button_up" from="PlayersMarginContainer/PlayerLobby/VBoxContainer/HBoxContainer/Player1Button/NextSpriteButtonP1" to="." method="_on_back_button_button_up"]
+[connection signal="button_down" from="PlayersMarginContainer/PlayerLobby/VBoxContainer/HBoxContainer/Player2Button" to="." method="_on_player_2_button_button_down"]
+[connection signal="button_up" from="PlayersMarginContainer/PlayerLobby/VBoxContainer/HBoxContainer/Player2Button" to="." method="_on_player_2_button_button_up"]
+[connection signal="button_down" from="PlayersMarginContainer/PlayerLobby/VBoxContainer/HBoxContainer/Player2Button/LastSpriteButtonP2" to="." method="_on_back_button_button_down"]
+[connection signal="button_up" from="PlayersMarginContainer/PlayerLobby/VBoxContainer/HBoxContainer/Player2Button/LastSpriteButtonP2" to="." method="_on_back_button_button_up"]
+[connection signal="button_down" from="PlayersMarginContainer/PlayerLobby/VBoxContainer/HBoxContainer/Player2Button/NextSpriteButtonP2" to="." method="_on_back_button_button_down"]
+[connection signal="button_up" from="PlayersMarginContainer/PlayerLobby/VBoxContainer/HBoxContainer/Player2Button/NextSpriteButtonP2" to="." method="_on_back_button_button_up"]
+[connection signal="button_down" from="PlayersMarginContainer/PlayerLobby/VBoxContainer/HBoxContainer/Player3Button" to="." method="_on_player_3_button_button_down"]
+[connection signal="button_up" from="PlayersMarginContainer/PlayerLobby/VBoxContainer/HBoxContainer/Player3Button" to="." method="_on_player_3_button_button_up"]
+[connection signal="button_down" from="PlayersMarginContainer/PlayerLobby/VBoxContainer/HBoxContainer/Player3Button/LastSpriteButtonP3" to="." method="_on_back_button_button_down"]
+[connection signal="button_up" from="PlayersMarginContainer/PlayerLobby/VBoxContainer/HBoxContainer/Player3Button/LastSpriteButtonP3" to="." method="_on_back_button_button_up"]
+[connection signal="button_down" from="PlayersMarginContainer/PlayerLobby/VBoxContainer/HBoxContainer/Player3Button/NextSpriteButtonP3" to="." method="_on_back_button_button_down"]
+[connection signal="button_up" from="PlayersMarginContainer/PlayerLobby/VBoxContainer/HBoxContainer/Player3Button/NextSpriteButtonP3" to="." method="_on_back_button_button_up"]
+[connection signal="button_down" from="PlayersMarginContainer/PlayerLobby/VBoxContainer/HBoxContainer/Player4Button" to="." method="_on_player_4_button_button_down"]
+[connection signal="button_up" from="PlayersMarginContainer/PlayerLobby/VBoxContainer/HBoxContainer/Player4Button" to="." method="_on_player_4_button_button_up"]
+[connection signal="button_down" from="PlayersMarginContainer/PlayerLobby/VBoxContainer/HBoxContainer/Player4Button/LastSpriteButtonP4" to="." method="_on_back_button_button_down"]
+[connection signal="button_up" from="PlayersMarginContainer/PlayerLobby/VBoxContainer/HBoxContainer/Player4Button/LastSpriteButtonP4" to="." method="_on_back_button_button_up"]
+[connection signal="button_down" from="PlayersMarginContainer/PlayerLobby/VBoxContainer/HBoxContainer/Player4Button/NextSpriteButtonP4" to="." method="_on_back_button_button_down"]
+[connection signal="button_up" from="PlayersMarginContainer/PlayerLobby/VBoxContainer/HBoxContainer/Player4Button/NextSpriteButtonP4" to="." method="_on_back_button_button_up"]
+[connection signal="pressed" from="PlayersMarginContainer/PlayerLobby/VBoxContainer/CenterContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="SpritesMarginContainer/SpritesContainer/VBoxContainer/Char1/Sprite1/Char1Sprite1Button" to="." method="_on_char_1_sprite_1_button_pressed"]
+[connection signal="pressed" from="SpritesMarginContainer/SpritesContainer/VBoxContainer/Char1/Sprite2/Char1Sprite2Button" to="." method="_on_char_1_sprite_2_button_pressed"]
+[connection signal="pressed" from="SpritesMarginContainer/SpritesContainer/VBoxContainer/Char1/Sprite3/Char1Sprite3Button" to="." method="_on_char_1_sprite_3_button_pressed"]
+[connection signal="pressed" from="SpritesMarginContainer/SpritesContainer/VBoxContainer/Char1/Sprite4/Char1Sprite4Button" to="." method="_on_char_1_sprite_4_button_pressed"]
+[connection signal="pressed" from="SpritesMarginContainer/SpritesContainer/VBoxContainer/Char2/Sprite1/Char2Sprite1Button" to="." method="_on_char_2_sprite_1_button_pressed"]
+[connection signal="pressed" from="SpritesMarginContainer/SpritesContainer/VBoxContainer/Char2/Sprite2/Char2Sprite2Button" to="." method="_on_char_2_sprite_2_button_pressed"]
+[connection signal="pressed" from="SpritesMarginContainer/SpritesContainer/VBoxContainer/Char2/Sprite3/Char2Sprite3Button" to="." method="_on_char_2_sprite_3_button_pressed"]
+[connection signal="pressed" from="SpritesMarginContainer/SpritesContainer/VBoxContainer/Char2/Sprite4/Char2Sprite4Button" to="." method="_on_char_2_sprite_4_button_pressed"]
+[connection signal="pressed" from="SpritesMarginContainer/SpritesContainer/VBoxContainer/Char3/Sprite1/Char3Sprite1Button" to="." method="_on_char_3_sprite_1_button_pressed"]
+[connection signal="pressed" from="SpritesMarginContainer/SpritesContainer/VBoxContainer/Char3/Sprite2/Char3Sprite2Button" to="." method="_on_char_3_sprite_2_button_pressed"]
+[connection signal="pressed" from="SpritesMarginContainer/SpritesContainer/VBoxContainer/Char3/Sprite3/Char3Sprite3Button" to="." method="_on_char_3_sprite_3_button_pressed"]
+[connection signal="pressed" from="SpritesMarginContainer/SpritesContainer/VBoxContainer/Char3/Sprite4/Char3Sprite4Button" to="." method="_on_char_3_sprite_4_button_pressed"]
+[connection signal="pressed" from="SpritesMarginContainer/SpritesContainer/VBoxContainer/Char4/Sprite1/Char4Sprite1Button" to="." method="_on_char_4_sprite_1_button_pressed"]
+[connection signal="pressed" from="SpritesMarginContainer/SpritesContainer/VBoxContainer/Char4/Sprite2/Char4Sprite2Button" to="." method="_on_char_4_sprite_2_button_pressed"]
+[connection signal="pressed" from="SpritesMarginContainer/SpritesContainer/VBoxContainer/Char4/Sprite3/Char4Sprite3Button" to="." method="_on_char_4_sprite_3_button_pressed"]
+[connection signal="pressed" from="SpritesMarginContainer/SpritesContainer/VBoxContainer/Char4/Sprite4/Char4Sprite4Button" to="." method="_on_char_4_sprite_4_button_pressed"]
+[connection signal="pressed" from="ControlsMarginContainer/ControlsContainer/VBoxContainer/HBoxContainer/WASD/WASDButton" to="." method="_on_wasd_button_pressed"]
+[connection signal="pressed" from="ControlsMarginContainer/ControlsContainer/VBoxContainer/HBoxContainer/Arrows/ArrowsButton" to="." method="_on_arrows_button_pressed"]
+[connection signal="pressed" from="ControlsMarginContainer/ControlsContainer/VBoxContainer/HBoxContainer/JKLI/JKLIButton" to="." method="_on_jkli_button_pressed"]
+[connection signal="pressed" from="ControlsMarginContainer/ControlsContainer/VBoxContainer/HBoxContainer/Controller/ControllerButton" to="." method="_on_controller_button_pressed"]
+[connection signal="button_down" from="NameCenterContainer/VBoxContainer/CenterContainer3/OkButton" to="." method="_on_ok_button_button_down"]
+[connection signal="button_up" from="NameCenterContainer/VBoxContainer/CenterContainer3/OkButton" to="." method="_on_ok_button_button_up"]
+[connection signal="button_down" from="BackButton" to="." method="_on_back_button_button_down"]
+[connection signal="button_up" from="BackButton" to="." method="_on_back_button_button_up"]

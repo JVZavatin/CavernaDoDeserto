@@ -1,0 +1,63 @@
+[gd_scene load_steps=9 format=3 uid="uid://ct8yinqkqmg85"]
+
+[ext_resource type="Texture2D" uid="uid://butgh6gnvockn" path="res://Sprites/Objects/Vines-Yellow.png" id="1_m3bqd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ijoq"]
+atlas = ExtResource("1_m3bqd")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5bry6"]
+atlas = ExtResource("1_m3bqd")
+region = Rect2(8, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gh2nc"]
+atlas = ExtResource("1_m3bqd")
+region = Rect2(16, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ovwxf"]
+atlas = ExtResource("1_m3bqd")
+region = Rect2(24, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rtkf8"]
+atlas = ExtResource("1_m3bqd")
+region = Rect2(32, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c4vfy"]
+atlas = ExtResource("1_m3bqd")
+region = Rect2(40, 0, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r4kpj"]
+resource_name = "vine-yellow"
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ijoq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5bry6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gh2nc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ovwxf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rtkf8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c4vfy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[node name="vine_yellow" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 1
+sprite_frames = SubResource("SpriteFrames_r4kpj")
+autoplay = "default"
+frame_progress = 0.474192
+centered = false

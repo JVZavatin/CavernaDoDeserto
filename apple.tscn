@@ -1,0 +1,79 @@
+[gd_scene load_steps=15 format=3 uid="uid://bj5m3p5h1xex3"]
+
+[ext_resource type="Texture2D" uid="uid://dgyjbx8g6igy7" path="res://Sprites/Powers/Apple-Single.png" id="1_a66w3"]
+[ext_resource type="Script" uid="uid://cxxa3ma37imx6" path="res://apple.gd" id="1_sf11h"]
+[ext_resource type="Texture2D" uid="uid://b8e5jnfqq7hjw" path="res://Sprites/Objects/Apple.png" id="1_xnvl7"]
+[ext_resource type="Texture2D" uid="uid://cq718i7hvc80e" path="res://Sprites/Powers/Bow-Single.png" id="2_rukem"]
+[ext_resource type="Texture2D" uid="uid://gqomc70qj2nq" path="res://Sprites/Powers/Rain-single.png" id="3_w26c5"]
+[ext_resource type="Texture2D" uid="uid://s2ve4pn4ot17" path="res://Sprites/Powers/Shield-Single.png" id="4_l74bd"]
+[ext_resource type="Texture2D" uid="uid://dwm2ijsbrfnpr" path="res://Sprites/Powers/WingBoots-Single.png" id="5_xb6wu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gwjnh"]
+atlas = ExtResource("1_xnvl7")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t7kc8"]
+atlas = ExtResource("1_xnvl7")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tcq83"]
+atlas = ExtResource("1_xnvl7")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d8qg1"]
+atlas = ExtResource("1_xnvl7")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dqs62"]
+atlas = ExtResource("1_xnvl7")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_42m24"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gwjnh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t7kc8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tcq83")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d8qg1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dqs62")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xp6c6"]
+radius = 6.0
+
+[node name="Apple" type="Area2D" groups=["Apple"]]
+z_index = 2
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("1_sf11h")
+apple_sprites = Array[Texture]([ExtResource("1_a66w3"), ExtResource("4_l74bd"), ExtResource("2_rukem"), ExtResource("5_xb6wu"), ExtResource("3_w26c5")])
+metadata/apple_sprites = []
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.4, 0.4)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
+z_index = 3
+texture_filter = 1
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_42m24")
+frame_progress = 0.540039
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_xp6c6")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

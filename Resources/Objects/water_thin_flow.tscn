@@ -1,0 +1,63 @@
+[gd_scene load_steps=9 format=3 uid="uid://bw2f5puk4mf8q"]
+
+[ext_resource type="Texture2D" uid="uid://bmddhr2yhna1k" path="res://Sprites/Objects/Water-Thin.png" id="1_cplhr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2vgir"]
+atlas = ExtResource("1_cplhr")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jdbqd"]
+atlas = ExtResource("1_cplhr")
+region = Rect2(8, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0g507"]
+atlas = ExtResource("1_cplhr")
+region = Rect2(16, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oykn1"]
+atlas = ExtResource("1_cplhr")
+region = Rect2(24, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ei0dm"]
+atlas = ExtResource("1_cplhr")
+region = Rect2(32, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gg82n"]
+atlas = ExtResource("1_cplhr")
+region = Rect2(40, 0, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nnfb5"]
+resource_name = "water-thin-flow"
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2vgir")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jdbqd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0g507")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oykn1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ei0dm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gg82n")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="water_thin_flow" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 1
+sprite_frames = SubResource("SpriteFrames_nnfb5")
+autoplay = "default"
+frame_progress = 0.217556
+offset = Vector2(4, 4)

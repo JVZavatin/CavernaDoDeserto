@@ -1,0 +1,639 @@
+[gd_scene load_steps=23 format=3 uid="uid://7ne40bac5pg5"]
+
+[ext_resource type="PackedScene" uid="uid://6f50dx45hx8u" path="res://Player1.tscn" id="1_f2mxt"]
+[ext_resource type="Script" uid="uid://uwuhhcwyqmng" path="res://caverna_deserto.gd" id="1_tnqrk"]
+[ext_resource type="Texture2D" uid="uid://cg3rbh8ycwlsl" path="res://Sprites/Chars/Char1-1-Icon.png" id="2_bmd0c"]
+[ext_resource type="PackedScene" uid="uid://wjb5g0bqmvd7" path="res://UI/level_complete.tscn" id="2_ykxl0"]
+[ext_resource type="Resource" uid="uid://dlna4gwfby2r7" path="res://Resources/controls_1.tres" id="6_bsmu1"]
+[ext_resource type="Resource" uid="uid://cab1bywha45h5" path="res://Resources/controls_2.tres" id="7_bmd0c"]
+[ext_resource type="Resource" uid="uid://ciuuhfinpuh7y" path="res://Resources/controls_3.tres" id="8_2s38m"]
+[ext_resource type="Resource" uid="uid://7uqkfn554dbj" path="res://Resources/controls_4.tres" id="9_i2b7r"]
+[ext_resource type="Texture2D" uid="uid://b8e5jnfqq7hjw" path="res://Sprites/Objects/Apple.png" id="9_m2gkf"]
+[ext_resource type="LabelSettings" uid="uid://cw8jv4rysepmk" path="res://LabelPadrão.tres" id="10_wgpxw"]
+[ext_resource type="Texture2D" uid="uid://cv3kat6gyy07h" path="res://Sprites/Objects/Flag-Icon.png" id="11_bsmu1"]
+[ext_resource type="Texture2D" uid="uid://cpfgavsl8hp4b" path="res://Sprites/Ui/button_voltar_square_smaller.png" id="12_nnm5h"]
+[ext_resource type="PackedScene" uid="uid://dvqui5a8yj8qa" path="res://pause_menu.tscn" id="13_okk2m"]
+[ext_resource type="Texture2D" uid="uid://b2ueh0sypu0r5" path="res://Sprites/Objects/Podium.png" id="14_i2b7r"]
+[ext_resource type="Theme" uid="uid://bhiu8g2bwmcv2" path="res://YellowSmallButtons.tres" id="15_bmd0c"]
+[ext_resource type="Texture2D" uid="uid://btoy2r3murv35" path="res://Sprites/Chars/Char1-1-Podium.png" id="15_ggifc"]
+[ext_resource type="Texture2D" uid="uid://656pda004232" path="res://Sprites/Ui/proximo.png" id="16_2s38m"]
+[ext_resource type="Script" uid="uid://desdyc2rotcnd" path="res://canvas_race_transition.gd" id="18_88bgi"]
+[ext_resource type="Texture2D" uid="uid://dw30htvia71lc" path="res://Sprites/Ui/transition-1.png" id="19_505nd"]
+[ext_resource type="Texture2D" uid="uid://dxb0roe4lp8yy" path="res://Sprites/Ui/transition-2.png" id="20_it7o0"]
+[ext_resource type="Texture2D" uid="uid://bmgu7cs7s8f4q" path="res://Sprites/Ui/transition-3.png" id="21_ftdsq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kc0ap"]
+size = Vector2(3024, 84)
+
+[node name="CavernaDeserto" type="Node2D"]
+script = ExtResource("1_tnqrk")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(80, 180)
+offset_right = 323.0
+offset_bottom = 180.0
+theme_override_constants/separation = 0
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="HBoxContainer"]
+clip_children = 2
+custom_minimum_size = Vector2(80, 180)
+layout_mode = 2
+
+[node name="SubViewport" type="SubViewport" parent="HBoxContainer/SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(1000, 1000)
+render_target_update_mode = 4
+
+[node name="Camera2D" type="Camera2D" parent="HBoxContainer/SubViewportContainer/SubViewport"]
+offset = Vector2(0, 90)
+limit_left = 0
+position_smoothing_enabled = true
+
+[node name="Ui-P1" type="CanvasLayer" parent="HBoxContainer/SubViewportContainer/SubViewport"]
+visible = false
+
+[node name="PlayerUiIcon" type="Sprite2D" parent="HBoxContainer/SubViewportContainer/SubViewport/Ui-P1"]
+position = Vector2(0, 5)
+texture = ExtResource("2_bmd0c")
+centered = false
+region_rect = Rect2(3, 3, 10, 11)
+
+[node name="PlayerNameUi" type="Label" parent="HBoxContainer/SubViewportContainer/SubViewport/Ui-P1"]
+top_level = true
+offset_left = 16.0
+offset_top = 3.0
+offset_right = 44.0
+offset_bottom = 26.0
+text = "Player1"
+label_settings = ExtResource("10_wgpxw")
+
+[node name="AppleiUiIcon" type="Sprite2D" parent="HBoxContainer/SubViewportContainer/SubViewport/Ui-P1"]
+position = Vector2(2, 23)
+texture = ExtResource("9_m2gkf")
+centered = false
+region_enabled = true
+region_rect = Rect2(3, 3, 10, 11)
+
+[node name="ApplesUI" type="Label" parent="HBoxContainer/SubViewportContainer/SubViewport/Ui-P1"]
+top_level = true
+offset_left = 14.0
+offset_top = 18.0
+offset_right = 42.0
+offset_bottom = 41.0
+text = "0"
+label_settings = ExtResource("10_wgpxw")
+
+[node name="FlagUiIcon" type="Sprite2D" parent="HBoxContainer/SubViewportContainer/SubViewport/Ui-P1"]
+position = Vector2(2, 38)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("11_bsmu1")
+centered = false
+region_rect = Rect2(3, 3, 10, 11)
+
+[node name="LapsUi" type="Label" parent="HBoxContainer/SubViewportContainer/SubViewport/Ui-P1"]
+top_level = true
+offset_left = 14.0
+offset_top = 33.0
+offset_right = 42.0
+offset_bottom = 56.0
+text = "1"
+label_settings = ExtResource("10_wgpxw")
+
+[node name="Mundo" type="Node2D" parent="HBoxContainer/SubViewportContainer/SubViewport"]
+
+[node name="Player1" parent="HBoxContainer/SubViewportContainer/SubViewport/Mundo" instance=ExtResource("1_f2mxt")]
+position = Vector2(208, 472)
+controls = ExtResource("6_bsmu1")
+
+[node name="Player2" parent="HBoxContainer/SubViewportContainer/SubViewport/Mundo" instance=ExtResource("1_f2mxt")]
+visible = false
+position = Vector2(224, 472)
+controls = ExtResource("7_bmd0c")
+
+[node name="Player3" parent="HBoxContainer/SubViewportContainer/SubViewport/Mundo" instance=ExtResource("1_f2mxt")]
+visible = false
+position = Vector2(256, 472)
+controls = ExtResource("8_2s38m")
+
+[node name="Player4" parent="HBoxContainer/SubViewportContainer/SubViewport/Mundo" instance=ExtResource("1_f2mxt")]
+visible = false
+position = Vector2(272, 472)
+controls = ExtResource("9_i2b7r")
+
+[node name="FinishLine" type="Area2D" parent="HBoxContainer/SubViewportContainer/SubViewport/Mundo"]
+collision_layer = 16
+collision_mask = 0
+
+[node name="FinishLineCollision" type="CollisionShape2D" parent="HBoxContainer/SubViewportContainer/SubViewport/Mundo/FinishLine"]
+position = Vector2(848, -42)
+shape = SubResource("RectangleShape2D_kc0ap")
+
+[node name="ColorRect" type="ColorRect" parent="HBoxContainer"]
+custom_minimum_size = Vector2(1, 0)
+layout_mode = 2
+
+[node name="SubViewportContainer2" type="SubViewportContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(80, 180)
+layout_mode = 2
+
+[node name="SubViewport" type="SubViewport" parent="HBoxContainer/SubViewportContainer2"]
+handle_input_locally = false
+size = Vector2i(80, 180)
+render_target_update_mode = 4
+
+[node name="Camera2D" type="Camera2D" parent="HBoxContainer/SubViewportContainer2/SubViewport"]
+offset = Vector2(0, 100)
+position_smoothing_enabled = true
+
+[node name="Ui-P2" type="CanvasLayer" parent="HBoxContainer/SubViewportContainer2/SubViewport"]
+visible = false
+
+[node name="PlayerUiIcon" type="Sprite2D" parent="HBoxContainer/SubViewportContainer2/SubViewport/Ui-P2"]
+position = Vector2(0, 5)
+texture = ExtResource("2_bmd0c")
+centered = false
+region_rect = Rect2(3, 3, 10, 11)
+
+[node name="PlayerNameUi" type="Label" parent="HBoxContainer/SubViewportContainer2/SubViewport/Ui-P2"]
+top_level = true
+offset_left = 16.0
+offset_top = 3.0
+offset_right = 44.0
+offset_bottom = 26.0
+text = "Player1"
+label_settings = ExtResource("10_wgpxw")
+
+[node name="AppleiUiIcon" type="Sprite2D" parent="HBoxContainer/SubViewportContainer2/SubViewport/Ui-P2"]
+position = Vector2(2, 23)
+texture = ExtResource("9_m2gkf")
+centered = false
+region_enabled = true
+region_rect = Rect2(3, 3, 10, 11)
+
+[node name="ApplesUI" type="Label" parent="HBoxContainer/SubViewportContainer2/SubViewport/Ui-P2"]
+top_level = true
+offset_left = 14.0
+offset_top = 18.0
+offset_right = 42.0
+offset_bottom = 41.0
+text = "0"
+label_settings = ExtResource("10_wgpxw")
+
+[node name="FlagUiIcon" type="Sprite2D" parent="HBoxContainer/SubViewportContainer2/SubViewport/Ui-P2"]
+position = Vector2(2, 38)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("11_bsmu1")
+centered = false
+region_rect = Rect2(3, 3, 10, 11)
+
+[node name="LapsUi" type="Label" parent="HBoxContainer/SubViewportContainer2/SubViewport/Ui-P2"]
+top_level = true
+offset_left = 14.0
+offset_top = 33.0
+offset_right = 42.0
+offset_bottom = 56.0
+text = "1"
+label_settings = ExtResource("10_wgpxw")
+
+[node name="ColorRect2" type="ColorRect" parent="HBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(1, 0)
+layout_mode = 2
+
+[node name="SubViewportContainer3" type="SubViewportContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(80, 180)
+layout_mode = 2
+
+[node name="SubViewport" type="SubViewport" parent="HBoxContainer/SubViewportContainer3"]
+handle_input_locally = false
+size = Vector2i(80, 180)
+render_target_update_mode = 4
+
+[node name="Camera2D" type="Camera2D" parent="HBoxContainer/SubViewportContainer3/SubViewport"]
+offset = Vector2(0, 100)
+position_smoothing_enabled = true
+
+[node name="Ui-P3" type="CanvasLayer" parent="HBoxContainer/SubViewportContainer3/SubViewport"]
+visible = false
+
+[node name="PlayerUiIcon" type="Sprite2D" parent="HBoxContainer/SubViewportContainer3/SubViewport/Ui-P3"]
+position = Vector2(0, 5)
+texture = ExtResource("2_bmd0c")
+centered = false
+region_rect = Rect2(3, 3, 10, 11)
+
+[node name="PlayerNameUi" type="Label" parent="HBoxContainer/SubViewportContainer3/SubViewport/Ui-P3"]
+top_level = true
+offset_left = 16.0
+offset_top = 3.0
+offset_right = 44.0
+offset_bottom = 26.0
+text = "Player1"
+label_settings = ExtResource("10_wgpxw")
+
+[node name="AppleiUiIcon" type="Sprite2D" parent="HBoxContainer/SubViewportContainer3/SubViewport/Ui-P3"]
+position = Vector2(2, 23)
+texture = ExtResource("9_m2gkf")
+centered = false
+region_enabled = true
+region_rect = Rect2(3, 3, 10, 11)
+
+[node name="ApplesUI" type="Label" parent="HBoxContainer/SubViewportContainer3/SubViewport/Ui-P3"]
+top_level = true
+offset_left = 14.0
+offset_top = 18.0
+offset_right = 42.0
+offset_bottom = 41.0
+text = "0"
+label_settings = ExtResource("10_wgpxw")
+
+[node name="FlagUiIcon" type="Sprite2D" parent="HBoxContainer/SubViewportContainer3/SubViewport/Ui-P3"]
+position = Vector2(2, 38)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("11_bsmu1")
+centered = false
+region_rect = Rect2(3, 3, 10, 11)
+
+[node name="LapsUi" type="Label" parent="HBoxContainer/SubViewportContainer3/SubViewport/Ui-P3"]
+top_level = true
+offset_left = 14.0
+offset_top = 33.0
+offset_right = 42.0
+offset_bottom = 56.0
+text = "1"
+label_settings = ExtResource("10_wgpxw")
+
+[node name="ColorRect3" type="ColorRect" parent="HBoxContainer"]
+custom_minimum_size = Vector2(1, 0)
+layout_mode = 2
+
+[node name="SubViewportContainer4" type="SubViewportContainer" parent="HBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(80, 180)
+layout_mode = 2
+
+[node name="SubViewport" type="SubViewport" parent="HBoxContainer/SubViewportContainer4"]
+handle_input_locally = false
+size = Vector2i(80, 180)
+render_target_update_mode = 0
+
+[node name="Camera2D" type="Camera2D" parent="HBoxContainer/SubViewportContainer4/SubViewport"]
+offset = Vector2(0, 100)
+position_smoothing_enabled = true
+
+[node name="Ui-P4" type="CanvasLayer" parent="HBoxContainer/SubViewportContainer4/SubViewport"]
+visible = false
+
+[node name="PlayerUiIcon" type="Sprite2D" parent="HBoxContainer/SubViewportContainer4/SubViewport/Ui-P4"]
+position = Vector2(0, 5)
+texture = ExtResource("2_bmd0c")
+centered = false
+region_rect = Rect2(3, 3, 10, 11)
+
+[node name="PlayerNameUi" type="Label" parent="HBoxContainer/SubViewportContainer4/SubViewport/Ui-P4"]
+top_level = true
+offset_left = 16.0
+offset_top = 3.0
+offset_right = 44.0
+offset_bottom = 26.0
+text = "Player1"
+label_settings = ExtResource("10_wgpxw")
+
+[node name="AppleiUiIcon" type="Sprite2D" parent="HBoxContainer/SubViewportContainer4/SubViewport/Ui-P4"]
+position = Vector2(2, 23)
+texture = ExtResource("9_m2gkf")
+centered = false
+region_enabled = true
+region_rect = Rect2(3, 3, 10, 11)
+
+[node name="ApplesUI" type="Label" parent="HBoxContainer/SubViewportContainer4/SubViewport/Ui-P4"]
+top_level = true
+offset_left = 14.0
+offset_top = 18.0
+offset_right = 42.0
+offset_bottom = 41.0
+text = "0"
+label_settings = ExtResource("10_wgpxw")
+
+[node name="FlagUiIcon" type="Sprite2D" parent="HBoxContainer/SubViewportContainer4/SubViewport/Ui-P4"]
+position = Vector2(2, 38)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("11_bsmu1")
+centered = false
+region_rect = Rect2(3, 3, 10, 11)
+
+[node name="LapsUi" type="Label" parent="HBoxContainer/SubViewportContainer4/SubViewport/Ui-P4"]
+top_level = true
+offset_left = 14.0
+offset_top = 33.0
+offset_right = 42.0
+offset_bottom = 56.0
+text = "1"
+label_settings = ExtResource("10_wgpxw")
+
+[node name="CanvasScoreBoard" type="CanvasLayer" parent="HBoxContainer"]
+
+[node name="ScoreboardTimer" type="Timer" parent="HBoxContainer/CanvasScoreBoard"]
+wait_time = 5.0
+one_shot = true
+
+[node name="BlackBackground" type="ColorRect" parent="HBoxContainer/CanvasScoreBoard"]
+visible = false
+z_index = 5
+custom_minimum_size = Vector2(400, 250)
+offset_left = -35.0
+offset_top = -29.0
+offset_right = 365.0
+offset_bottom = 221.0
+color = Color(0, 0, 0, 0.313726)
+
+[node name="Podium" type="CenterContainer" parent="HBoxContainer/CanvasScoreBoard"]
+z_index = 6
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="PodiumSprite" type="Sprite2D" parent="HBoxContainer/CanvasScoreBoard/Podium"]
+position = Vector2(21, 3)
+texture = ExtResource("14_i2b7r")
+
+[node name="Place1" type="Node2D" parent="HBoxContainer/CanvasScoreBoard/Podium"]
+visible = false
+z_index = 6
+
+[node name="Sprite" type="Sprite2D" parent="HBoxContainer/CanvasScoreBoard/Podium/Place1"]
+z_index = 6
+position = Vector2(51, 3)
+texture = ExtResource("15_ggifc")
+
+[node name="AppleiIcon" type="Sprite2D" parent="HBoxContainer/CanvasScoreBoard/Podium/Place1"]
+z_index = 6
+position = Vector2(32, -41)
+texture = ExtResource("9_m2gkf")
+centered = false
+region_enabled = true
+region_rect = Rect2(3, 3, 10, 11)
+
+[node name="ApplesLabel" type="Label" parent="HBoxContainer/CanvasScoreBoard/Podium/Place1"]
+top_level = true
+z_index = 6
+offset_left = 184.0
+offset_top = 25.0
+offset_right = 212.0
+offset_bottom = 48.0
+text = "0"
+label_settings = ExtResource("10_wgpxw")
+metadata/_edit_use_anchors_ = true
+
+[node name="PlayerNameUi" type="Label" parent="HBoxContainer/CanvasScoreBoard/Podium/Place1"]
+top_level = true
+z_index = 6
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 6.0
+offset_top = 30.0
+offset_right = 57.0
+offset_bottom = 53.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Player"
+label_settings = ExtResource("10_wgpxw")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Place2" type="Node2D" parent="HBoxContainer/CanvasScoreBoard/Podium"]
+visible = false
+z_index = 6
+
+[node name="Sprite" type="Sprite2D" parent="HBoxContainer/CanvasScoreBoard/Podium/Place2"]
+z_index = 6
+position = Vector2(111, 23)
+texture = ExtResource("15_ggifc")
+
+[node name="AppleiIcon" type="Sprite2D" parent="HBoxContainer/CanvasScoreBoard/Podium/Place2"]
+z_index = 6
+position = Vector2(92, -21)
+texture = ExtResource("9_m2gkf")
+centered = false
+region_enabled = true
+region_rect = Rect2(3, 3, 10, 11)
+
+[node name="ApplesLabel" type="Label" parent="HBoxContainer/CanvasScoreBoard/Podium/Place2"]
+top_level = true
+z_index = 6
+offset_left = 244.0
+offset_top = 45.0
+offset_right = 272.0
+offset_bottom = 68.0
+text = "0"
+label_settings = ExtResource("10_wgpxw")
+metadata/_edit_use_anchors_ = true
+
+[node name="PlayerNameUi" type="Label" parent="HBoxContainer/CanvasScoreBoard/Podium/Place2"]
+top_level = true
+z_index = 6
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 65.5
+offset_top = 49.5
+offset_right = 116.5
+offset_bottom = 72.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Player"
+label_settings = ExtResource("10_wgpxw")
+horizontal_alignment = 1
+
+[node name="Place3" type="Node2D" parent="HBoxContainer/CanvasScoreBoard/Podium"]
+visible = false
+z_index = 6
+
+[node name="Sprite" type="Sprite2D" parent="HBoxContainer/CanvasScoreBoard/Podium/Place3"]
+z_index = 6
+position = Vector2(-9, 23)
+texture = ExtResource("15_ggifc")
+
+[node name="AppleiIcon" type="Sprite2D" parent="HBoxContainer/CanvasScoreBoard/Podium/Place3"]
+z_index = 6
+position = Vector2(-28, -21)
+texture = ExtResource("9_m2gkf")
+centered = false
+region_enabled = true
+region_rect = Rect2(3, 3, 10, 11)
+
+[node name="ApplesLabel" type="Label" parent="HBoxContainer/CanvasScoreBoard/Podium/Place3"]
+top_level = true
+z_index = 6
+offset_left = 124.0
+offset_top = 45.0
+offset_right = 152.0
+offset_bottom = 68.0
+text = "0"
+label_settings = ExtResource("10_wgpxw")
+
+[node name="PlayerNameUi" type="Label" parent="HBoxContainer/CanvasScoreBoard/Podium/Place3"]
+top_level = true
+z_index = 6
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -81.0
+offset_top = 50.0
+offset_right = 24.0
+offset_bottom = 73.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Player"
+label_settings = ExtResource("10_wgpxw")
+horizontal_alignment = 1
+
+[node name="Place4" type="Node2D" parent="HBoxContainer/CanvasScoreBoard/Podium"]
+visible = false
+z_index = 6
+
+[node name="Sprite" type="Sprite2D" parent="HBoxContainer/CanvasScoreBoard/Podium/Place4"]
+z_index = 6
+position = Vector2(-70, 43)
+texture = ExtResource("15_ggifc")
+
+[node name="AppleiIcon" type="Sprite2D" parent="HBoxContainer/CanvasScoreBoard/Podium/Place4"]
+z_index = 6
+position = Vector2(-89, -1)
+texture = ExtResource("9_m2gkf")
+centered = false
+region_enabled = true
+region_rect = Rect2(3, 3, 10, 11)
+
+[node name="ApplesLabel" type="Label" parent="HBoxContainer/CanvasScoreBoard/Podium/Place4"]
+top_level = true
+z_index = 6
+offset_left = 63.0
+offset_top = 65.0
+offset_right = 91.0
+offset_bottom = 88.0
+text = "0"
+label_settings = ExtResource("10_wgpxw")
+
+[node name="PlayerNameUi" type="Label" parent="HBoxContainer/CanvasScoreBoard/Podium/Place4"]
+top_level = true
+z_index = 6
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -114.5
+offset_top = 67.5
+offset_right = -63.5
+offset_bottom = 90.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Player"
+label_settings = ExtResource("10_wgpxw")
+horizontal_alignment = 1
+
+[node name="LevelComplete" parent="HBoxContainer/CanvasScoreBoard" instance=ExtResource("2_ykxl0")]
+visible = false
+top_level = true
+anchors_preset = 15
+anchor_bottom = 1.0
+offset_bottom = 0.0
+
+[node name="Options" type="CenterContainer" parent="HBoxContainer/CanvasScoreBoard"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/CanvasScoreBoard/Options"]
+layout_mode = 2
+
+[node name="NextButton" type="Button" parent="HBoxContainer/CanvasScoreBoard/Options/VBoxContainer"]
+z_index = 5
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource("15_bmd0c")
+text = "Next Race"
+icon = ExtResource("16_2s38m")
+flat = true
+
+[node name="BackButton" type="Button" parent="HBoxContainer/CanvasScoreBoard/Options/VBoxContainer"]
+z_index = 5
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource("15_bmd0c")
+text = "Back"
+icon = ExtResource("12_nnm5h")
+flat = true
+
+[node name="CanvasPauseMenu" type="CanvasLayer" parent="HBoxContainer"]
+visible = false
+
+[node name="PauseMenu" parent="HBoxContainer/CanvasPauseMenu" instance=ExtResource("13_okk2m")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 320.0
+offset_bottom = 180.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="CanvasRaceTransition" type="CanvasLayer" parent="HBoxContainer"]
+script = ExtResource("18_88bgi")
+
+[node name="TransitionTimer" type="Timer" parent="HBoxContainer/CanvasRaceTransition"]
+
+[node name="BlackBackground" type="ColorRect" parent="HBoxContainer/CanvasRaceTransition"]
+visible = false
+z_index = 5
+custom_minimum_size = Vector2(400, 250)
+offset_left = -35.0
+offset_top = -29.0
+offset_right = 365.0
+offset_bottom = 221.0
+color = Color(0, 0, 0, 0.54902)
+
+[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer/CanvasRaceTransition"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="1" type="Sprite2D" parent="HBoxContainer/CanvasRaceTransition/CenterContainer"]
+visible = false
+z_index = 6
+texture = ExtResource("19_505nd")
+
+[node name="2" type="Sprite2D" parent="HBoxContainer/CanvasRaceTransition/CenterContainer"]
+visible = false
+z_index = 6
+texture = ExtResource("20_it7o0")
+
+[node name="3" type="Sprite2D" parent="HBoxContainer/CanvasRaceTransition/CenterContainer"]
+visible = false
+z_index = 6
+texture = ExtResource("21_ftdsq")
+
+[connection signal="button_up" from="HBoxContainer/CanvasScoreBoard/Options/VBoxContainer/NextButton" to="." method="_on_next_button_button_up"]
+[connection signal="button_up" from="HBoxContainer/CanvasScoreBoard/Options/VBoxContainer/BackButton" to="." method="_on_back_button_button_up"]
+[connection signal="timeout" from="HBoxContainer/CanvasRaceTransition/TransitionTimer" to="HBoxContainer/CanvasRaceTransition" method="_on_transition_timer_timeout"]

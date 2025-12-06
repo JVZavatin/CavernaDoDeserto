@@ -1,0 +1,77 @@
+[gd_scene load_steps=11 format=3 uid="uid://qn64ahhvgm35"]
+
+[ext_resource type="Texture2D" uid="uid://bjoqsb2mt48co" path="res://Sprites/Objects/JungleGrass-1.png" id="1_jojkc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lpp5b"]
+atlas = ExtResource("1_jojkc")
+region = Rect2(0, 40, 8, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kp1hm"]
+atlas = ExtResource("1_jojkc")
+region = Rect2(8, 40, 8, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mry22"]
+atlas = ExtResource("1_jojkc")
+region = Rect2(16, 40, 8, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6xf73"]
+atlas = ExtResource("1_jojkc")
+region = Rect2(24, 40, 8, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dv77x"]
+atlas = ExtResource("1_jojkc")
+region = Rect2(32, 40, 8, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ce6v1"]
+atlas = ExtResource("1_jojkc")
+region = Rect2(40, 40, 8, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rnxpr"]
+atlas = ExtResource("1_jojkc")
+region = Rect2(48, 40, 8, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8dyb5"]
+atlas = ExtResource("1_jojkc")
+region = Rect2(56, 40, 8, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pcmnr"]
+resource_name = "vine-red"
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lpp5b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kp1hm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mry22")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6xf73")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dv77x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ce6v1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rnxpr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8dyb5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[node name="VineLongRed" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 1
+sprite_frames = SubResource("SpriteFrames_pcmnr")
+autoplay = "default"
+frame_progress = 0.723755
+centered = false

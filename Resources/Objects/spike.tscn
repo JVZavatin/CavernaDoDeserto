@@ -1,0 +1,62 @@
+[gd_scene load_steps=10 format=3 uid="uid://cxyx63j3vhdsi"]
+
+[ext_resource type="PackedScene" uid="uid://dvldeqa5fi58o" path="res://Resources/Objects/hazard_area.tscn" id="1_lradu"]
+[ext_resource type="Texture2D" uid="uid://b7vrme36w2ssw" path="res://Sprites/Objects/Spikes.png" id="2_lradu"]
+[ext_resource type="PackedScene" uid="uid://c8ms4uolywhvg" path="res://Resources/Objects/medium_grass.tscn" id="3_lradu"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_w6o6w"]
+a = Vector2(4, 3)
+b = Vector2(4, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fgmlw"]
+atlas = ExtResource("2_lradu")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_doie3"]
+atlas = ExtResource("2_lradu")
+region = Rect2(8, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_saeu2"]
+atlas = ExtResource("2_lradu")
+region = Rect2(16, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8sphm"]
+atlas = ExtResource("2_lradu")
+region = Rect2(24, 0, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jb07d"]
+resource_name = "vine-red"
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fgmlw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_doie3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_saeu2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8sphm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="Spike" type="Node2D"]
+
+[node name="hazard_area" parent="." instance=ExtResource("1_lradu")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hazard_area"]
+shape = SubResource("SegmentShape2D_w6o6w")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 1
+sprite_frames = SubResource("SpriteFrames_jb07d")
+autoplay = "default"
+frame_progress = 0.328709
+centered = false
+
+[node name="MediumGrass" parent="." instance=ExtResource("3_lradu")]

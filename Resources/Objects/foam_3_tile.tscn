@@ -1,0 +1,62 @@
+[gd_scene load_steps=9 format=3 uid="uid://do4x1mtrin7v6"]
+
+[ext_resource type="Texture2D" uid="uid://b8088udbma17y" path="res://Sprites/Objects/Water-Foam-3Tile.png" id="1_s4ph4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xlblj"]
+atlas = ExtResource("1_s4ph4")
+region = Rect2(0, 0, 24, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a8p63"]
+atlas = ExtResource("1_s4ph4")
+region = Rect2(72, 0, 24, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j1oro"]
+atlas = ExtResource("1_s4ph4")
+region = Rect2(24, 0, 24, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jw1tw"]
+atlas = ExtResource("1_s4ph4")
+region = Rect2(96, 0, 24, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dhugw"]
+atlas = ExtResource("1_s4ph4")
+region = Rect2(48, 0, 24, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_whdqf"]
+atlas = ExtResource("1_s4ph4")
+region = Rect2(120, 0, 24, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hog60"]
+resource_name = "foam-3-tile"
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xlblj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a8p63")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j1oro")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jw1tw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dhugw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_whdqf")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="foam_3_tile" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 1
+sprite_frames = SubResource("SpriteFrames_hog60")
+autoplay = "default"
+offset = Vector2(12, 4)

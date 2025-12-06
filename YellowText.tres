@@ -1,0 +1,51 @@
+[gd_resource type="Theme" load_steps=11 format=3 uid="uid://dk51ejjgwhnmb"]
+
+[ext_resource type="Texture2D" uid="uid://b6rkuocno6luy" path="res://Sprites/Ui/Button-Player-Disabled.png" id="1_doj7a"]
+[ext_resource type="Texture2D" uid="uid://wcaary27prhs" path="res://Sprites/Ui/Button-Player-Blank.png" id="1_ljnyv"]
+[ext_resource type="Texture2D" uid="uid://p7bswl2la1ui" path="res://Sprites/Ui/Button-Player-Hover.png" id="2_02408"]
+[ext_resource type="Texture2D" uid="uid://drxddr8ihruml" path="res://Sprites/Ui/Button-Player-Blank-Pressed.png" id="2_ydrci"]
+[ext_resource type="Texture2D" uid="uid://ccg41l52rmw2o" path="res://Sprites/Ui/Leaderboard.png" id="5_02408"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kq2jf"]
+texture = ExtResource("1_doj7a")
+expand_margin_left = 4.0
+expand_margin_right = 4.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p63vb"]
+texture = ExtResource("2_02408")
+texture_margin_left = 4.0
+texture_margin_right = 4.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ydrci"]
+texture = ExtResource("1_ljnyv")
+texture_margin_left = 4.0
+texture_margin_right = 4.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ln1ji"]
+texture = ExtResource("2_ydrci")
+texture_margin_left = 4.0
+texture_margin_right = 4.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_52g8r"]
+content_margin_top = 0.0
+content_margin_bottom = 10.0
+texture = ExtResource("5_02408")
+
+[resource]
+Button/colors/font_color = Color(1, 1, 0, 1)
+Button/colors/font_disabled_color = Color(1, 1, 0, 0.392157)
+Button/colors/font_focus_color = Color(1, 1, 0, 1)
+Button/colors/font_hover_color = Color(1, 1, 0, 1)
+Button/colors/font_hover_pressed_color = Color(1, 1, 0, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(1, 1, 0, 1)
+Button/constants/outline_size = 4
+Button/styles/disabled = SubResource("StyleBoxTexture_kq2jf")
+Button/styles/hover = SubResource("StyleBoxTexture_p63vb")
+Button/styles/normal = SubResource("StyleBoxTexture_ydrci")
+Button/styles/pressed = SubResource("StyleBoxTexture_ln1ji")
+LineEdit/colors/font_color = Color(1, 1, 0, 1)
+LineEdit/colors/font_outline_color = Color(0, 0, 0, 1)
+LineEdit/colors/font_placeholder_color = Color(1, 1, 0, 0.392157)
+LineEdit/constants/outline_size = 4
+ScrollContainer/styles/panel = SubResource("StyleBoxTexture_52g8r")

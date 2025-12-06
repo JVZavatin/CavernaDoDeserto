@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://wjb5g0bqmvd7"]
+
+[ext_resource type="Texture2D" uid="uid://brhv0sbov0nvu" path="res://Sprites/Titles/fim_da_corrida_pixelart.png" id="1_8iq24"]
+
+[node name="LevelComplete" type="ColorRect"]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.861
+offset_bottom = 0.019989
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.313726)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="CenterContainer"]
+top_level = true
+position = Vector2(170, 25)
+texture = ExtResource("1_8iq24")

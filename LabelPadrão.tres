@@ -1,0 +1,8 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://cw8jv4rysepmk"]
+
+[resource]
+resource_name = "LabelPadrão"
+font_size = 14
+font_color = Color(1, 1, 0, 1)
+shadow_size = 4
+shadow_color = Color(0, 0, 0, 1)
