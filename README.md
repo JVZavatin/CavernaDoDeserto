@@ -109,6 +109,8 @@ Essa abordagem utiliza **SubViewport** na Godot para renderizar múltiplas câme
 
 ## 🧭 Telas e Fluxo do Jogo
 
+![til](ReadMeAssets/Menu-Interface.gif)
+
 Fluxo principal de telas:
 
 1. **Menu Principal**
