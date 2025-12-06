@@ -7,6 +7,8 @@ O objetivo é simples: correr até o topo da caverna, coletar o máximo de maç�
 
 ## 🎮 Visão Geral
 
+![til](ReadMeAssets/Início-Corrida.gif)
+
 - **Gênero:** Plataforma vertical competitiva (2D)
 - **Engine:** Godot 4.4.1
 - **Jogadores:** 1 a 4 jogadores em tela dividida (local)
@@ -49,6 +51,7 @@ As habilidades especiais são itens de efeito temporário, ativados automaticame
 - **Chuva (Nuvem relampejante):**  
   Reduz drasticamente a velocidade de corrida de todos os outros jogadores, criando uma vantagem momentânea para quem ativou o poder.
 
+![til](ReadMeAssets/Meio-Corrida.gif)
 
 ## 👤 Personagens
 
